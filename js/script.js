@@ -165,6 +165,7 @@ const app = new Vue(
                     ],
                 },
             ],
+            currentUser: 0,
         },
     },
 );

@@ -12,6 +12,10 @@ img {
     width: 100%;
 }
 
+body {
+    background: linear-gradient(#009688 20%, #dcdbd1 20%)
+}
+
 .container {
     width: 80%;
     height: 800px;
@@ -28,7 +32,7 @@ img {
 
 .left-col {
     width: 35%;
-    background-color: aquamarine;
+    background-color: white;
 }
 
 .right-col {
@@ -121,3 +125,43 @@ img {
     font-size: .8rem;
 }
 
+section.chats {
+    overflow-y: auto;
+}
+
+.item-card-chat {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.user-chat-image {
+    display: flex;
+    align-items: center;
+}
+
+.user-chat-image img {
+    width: 45px;
+    border-radius: 50%;
+    margin: 0 .5rem;
+}
+
+.user-data {
+    margin-bottom: 1rem;
+}
+
+.message-sent {
+    font-size: .8rem;
+    color: #bdc1c7;
+}
+
+.date-hour-sent-message {
+    font-size: .8rem;
+    padding: .3rem;
+    color: #bdc1c7;
+}
+
+.active {
+    background-color: #e9ebeb;
+}

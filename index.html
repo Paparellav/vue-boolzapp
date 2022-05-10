@@ -31,7 +31,7 @@
                 <div class="user-item">
                     <div class="user-image">
                         <img src="img/avatar_io.jpg" alt="Sofia-avatar">
-                        <h6>Sofia</h6>
+                        <h5>Sofia</h5>
                     </div>
                     <div class="icons-user">
                         <i class="fas fa-circle-notch"></i>
@@ -63,6 +63,26 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- /Input section -->
+                <!-- Chat card -->
+                <section class="chats">
+                    <div 
+                    v-for="(element, index) in contacts" 
+                    class="item-card-chat" 
+                    :class="currentUser === index ? 'active' : ''"
+                    @click="checkCurrentUser(index)"
+                    >
+                        <div class="user-chat-image">
+                            <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="contacts[index].name">
+                            <div class="user-data">
+                                <h5>{{ contacts[index].name }}</h5>
+                                <div class="message-sent">Ultimo messaggio inviato</div>
+                            </div>
+                        </div>
+                        <div class="date-hour-sent-message">12:00</div>
+                    </div>
+                    <!-- /Chat card -->
+                </section>
+                
             </section>
             <!-- Right col -->
             <section class="right-col">

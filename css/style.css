@@ -18,10 +18,10 @@ body {
 
 .container {
     width: 80%;
-    height: 800px;
+    /* height: 800px; */
     min-width: 769px;
     display: flex;
-    margin: 4rem auto;
+    margin: 6rem auto;
     background-color: #eaeaea;
 }
 
@@ -37,7 +37,7 @@ body {
 
 .right-col {
     width: 65%;
-    background-color: bisque;
+    background-image: url(../img/mine.jpg);
 }
 
 .user-item {
@@ -100,7 +100,7 @@ body {
     color: #4f7485;
 }
 
-.input-section {
+.left-col .input-section {
     height: 40px;
     display: flex;
     align-items: center;
@@ -110,22 +110,23 @@ body {
 .input-icon {
     font-size: .8rem;
     margin-left: 1rem;
-    border-top: 1px solid #eaeaea;
-    border-left: 1px solid #eaeaea;
-    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #dadada;
+    border-left: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
     padding: .2rem 1.6rem;
     background-color: white;
-    color: #eaeaea;
+    color: #dadada;
 }
 
-.input-section input {
+.left-col .input-section input {
     width: 75%;
-    border: 1px solid #eaeaea;
+    border: 1px solid #dadada;
     padding: .2rem .6rem;
     font-size: .8rem;
 }
 
-section.chats {
+div.chats {
+    height: calc(100% - 150px);
     overflow-y: auto;
 }
 
@@ -156,7 +157,7 @@ section.chats {
     color: #bdc1c7;
 }
 
-.date-hour-sent-message {
+.chats .date-hour-sent-message {
     font-size: .8rem;
     padding: .3rem;
     color: #bdc1c7;
@@ -164,4 +165,64 @@ section.chats {
 
 .active {
     background-color: #e9ebeb;
+}
+
+.chat-p2p {
+    width: 100%;
+    height: calc(100% - 110px);
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: auto; */
+}
+
+.chat-p2p .sent-mess {
+    width: 300px;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    margin: .3rem 1rem;
+    border-radius: .5rem;
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+
+.chat-p2p .first-sent {
+    margin-top: 3rem;
+}
+
+.chat-p2p .date-hour-sent-message {
+    font-size: .7rem;
+    color: #bdc1c7;
+    position: relative;
+    top: 5px;
+    left: 92%;
+}
+
+.chat-p2p .received-mess {
+    width: 300px;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    margin: .3rem 1rem;
+    border-radius: .5rem;
+    background-color: white;
+}
+
+.right-col .input-section {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #f3eeea;
+}
+
+.chat-input-icon {
+    font-size: 1.5rem;
+    margin: 0 2rem;
+    color: #6b7376;
+}
+
+.right-col .input-section input {
+    width: 85%;
+    border: none;
+    border-radius: .5rem;
+    padding: .7rem 1rem;
+
 }

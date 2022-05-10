@@ -64,7 +64,7 @@
                 </div>
                 <!-- /Input section -->
                 <!-- Chat card -->
-                <section class="chats">
+                <div class="chats">
                     <div 
                     v-for="(element, index) in contacts" 
                     class="item-card-chat" 
@@ -81,12 +81,63 @@
                         <div class="date-hour-sent-message">12:00</div>
                     </div>
                     <!-- /Chat card -->
-                </section>
+                </d>
                 
             </section>
             <!-- Right col -->
             <section class="right-col">
+                <!-- User section -->
+                <div class="user-item">
+                    <div class="user-image">
+                        <img :src="'img/avatar' + contacts[0].avatar + '.jpg'" :alt="contacts[0].name">
+                        <div>
+                            <h5>{{ contacts[0].name }}</h5>
+                            <div class="message-sent">Ultimo accesso oggi alle 12:00</div>
+                        </div>    
+                    </div>
+                    <div class="icons-user">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <!-- /User section -->
+                <!-- Chat P2P section -->
+                <div class="chat-p2p">
+                    <div class="sent-mess first-sent">
+                        <p>Hai portato a spasso il cane?</p>
+                        <div class="date-hour-sent-message">15:30</div>
+                    </div>
+                    <div class="sent-mess">
+                        <p>Hai portato a spasso il cane?</p>
+                        <div class="date-hour-sent-message">15:50</div>
+                    </div>
+                    <div class="received-mess">
+                        <p>Tutto fatto!</p>
+                        <div class="date-hour-sent-message">16:15</div>
+                    </div>
+                    <div class="received-mess">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores recusandae veniam sunt doloribus reiciendis sapiente eos iste? Voluptatem iure, amet assumenda officia suscipit ad rem dolor neque quam saepe?</p>
+                        <div class="date-hour-sent-message">16:15</div>
+                    </div>
+                    <div class="sent-mess">
+                        <p>Bravo bravo co**ne</p>
+                        <div class="date-hour-sent-message">15:50</div>
+                    </div>
 
+                </div>
+                <!-- /Chat P2P section -->
+                <!-- Input section -->
+                <div class="input-section">
+                    <div class="chat-input-icon">
+                        <i class="far fa-smile"></i>
+                    </div>
+                    <input type="text" placeholder="Scrivi messaggio">
+                    <div class="chat-input-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+                <!-- /Input section -->
             </section>
             
         </div>

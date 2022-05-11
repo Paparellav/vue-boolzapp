@@ -166,20 +166,24 @@ const app = new Vue(
                 },
             ],
             currentUser: 0,
-            userMessage: '',
+            userMessage: "",
+            filterPerWord: "",
         },
         methods: {
             checkCurrentUser: function (index) {
                 this.currentUser = index;
             },
             addMessage: function () {
-                const newObject = {
-                    date: Date.now(),
-                    message: this.userMessage,
-                    status: 'sent',
+                const trimmedString = this.userMessage.trim();
+                if (trimmedString.length > 2) {
+                    const newObject = {
+                        date: Date.now(),
+                        message: trimmedString,
+                        status: 'sent',
+                    }
+                    this.contacts[this.currentUser].messages.push(newObject);
+                    this.userMessage = '';
                 }
-                this.contacts[this.currentUser].messages.push(newObject);
-                this.userMessage = '';
             },
             answerMessage: function () {
                 setTimeout(() => {
@@ -191,6 +195,18 @@ const app = new Vue(
                     this.contacts[this.currentUser].messages.push(newObject);
                 }, 1000);
             },
+            filterContacts: function () {
+                this.contacts.forEach((e) => {
+                    const formattedWord = e.name.toLowerCase();
+                    const formattedSearch = this.filterPerWord.toLowerCase();
+                    if (formattedWord.includes(formattedSearch)) {
+                        e.visible = true;
+                    } else {
+                        e.visible = false;
+                    }
+                });
+            },
+
         },
     },
 );

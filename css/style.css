@@ -8,20 +8,15 @@ html {
     font-family: 'Lato', sans-serif;
 }
 
-img {
-    width: 100%;
-}
-
 body {
-    background: linear-gradient(#009688 20%, #dcdbd1 20%)
+    background: linear-gradient(#009688 20%, #dcdbd1 20%);
 }
 
 .container {
-    width: 80%;
-    /* height: 800px; */
-    min-width: 769px;
+    width: 92%;
+    min-width: 900px;
     display: flex;
-    margin: 6rem auto;
+    margin: 3rem auto;
     background-color: #eaeaea;
 }
 
@@ -31,12 +26,12 @@ body {
 }
 
 .left-col {
-    width: 35%;
+    width: 30%;
     background-color: white;
 }
 
 .right-col {
-    width: 65%;
+    width: 70%;
     background-image: url(../img/mine.jpg);
 }
 
@@ -153,12 +148,12 @@ div.chats {
 }
 
 .message-sent {
-    font-size: .8rem;
+    font-size: .76rem;
     color: #bdc1c7;
 }
 
 .chats .date-hour-sent-message {
-    font-size: .8rem;
+    font-size: .7rem;
     padding: .3rem;
     color: #bdc1c7;
 }
@@ -173,6 +168,10 @@ div.chats {
     display: flex;
     flex-direction: column;
     /* overflow-y: auto; */
+}
+
+.chat-p2p div:first-child {
+    margin-top: 3rem;
 }
 
 .chat-p2p .sent-mess {
@@ -192,9 +191,7 @@ div.chats {
 .chat-p2p .date-hour-sent-message {
     font-size: .7rem;
     color: #bdc1c7;
-    position: relative;
-    top: 5px;
-    left: 92%;
+    float: right;
 }
 
 .chat-p2p .received-mess {

@@ -74,14 +74,14 @@
                         <div class="user-chat-image">
                             <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="contacts[index].name">
                             <div class="user-data">
-                                <h5>{{ contacts[index].name }}</h5>
-                                <div class="message-sent">Ultimo messaggio inviato</div>
+                                <h5>{{ element.name }}</h5>
+                                <div class="message-sent">{{ element.messages[element.messages.length - 1].message }}</div>
                             </div>
                         </div>
-                        <div class="date-hour-sent-message">12:00</div>
+                        <div class="date-hour-sent-message">{{ element.messages[element.messages.length - 1].date }}</div>
                     </div>
                     <!-- /Chat card -->
-                </d>
+                </div>
                 
             </section>
             <!-- Right col -->
@@ -89,9 +89,9 @@
                 <!-- User section -->
                 <div class="user-item">
                     <div class="user-image">
-                        <img :src="'img/avatar' + contacts[0].avatar + '.jpg'" :alt="contacts[0].name">
+                        <img :src="'img/avatar' + contacts[currentUser].avatar + '.jpg'" :alt="contacts[0].name">
                         <div>
-                            <h5>{{ contacts[0].name }}</h5>
+                            <h5>{{ contacts[currentUser].name }}</h5>
                             <div class="message-sent">Ultimo accesso oggi alle 12:00</div>
                         </div>    
                     </div>
@@ -104,27 +104,13 @@
                 <!-- /User section -->
                 <!-- Chat P2P section -->
                 <div class="chat-p2p">
-                    <div class="sent-mess first-sent">
-                        <p>Hai portato a spasso il cane?</p>
-                        <div class="date-hour-sent-message">15:30</div>
+                    <div 
+                    :class="item.status === 'sent' ? 'sent-mess' : 'received-mess'" 
+                    v-for="item in contacts[currentUser].messages"
+                    >
+                        <p>{{ item.message }}</p>
+                        <div class="date-hour-sent-message">{{ item.date }}</div>
                     </div>
-                    <div class="sent-mess">
-                        <p>Hai portato a spasso il cane?</p>
-                        <div class="date-hour-sent-message">15:50</div>
-                    </div>
-                    <div class="received-mess">
-                        <p>Tutto fatto!</p>
-                        <div class="date-hour-sent-message">16:15</div>
-                    </div>
-                    <div class="received-mess">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores recusandae veniam sunt doloribus reiciendis sapiente eos iste? Voluptatem iure, amet assumenda officia suscipit ad rem dolor neque quam saepe?</p>
-                        <div class="date-hour-sent-message">16:15</div>
-                    </div>
-                    <div class="sent-mess">
-                        <p>Bravo bravo co**ne</p>
-                        <div class="date-hour-sent-message">15:50</div>
-                    </div>
-
                 </div>
                 <!-- /Chat P2P section -->
                 <!-- Input section -->

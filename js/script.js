@@ -171,6 +171,6 @@ const app = new Vue(
             checkCurrentUser: function (index) {
                 this.currentUser = index;
             }
-        }
+        },
     },
 );

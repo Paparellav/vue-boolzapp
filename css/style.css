@@ -170,6 +170,13 @@ div.chats {
     /* overflow-y: auto; */
 }
 
+.chat-p2p i {
+    position: relative;
+    bottom: 18px;
+    left: 95%;
+    color: #6b7376;
+}
+
 .chat-p2p div:first-child {
     margin-top: 3rem;
 }

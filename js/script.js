@@ -166,11 +166,31 @@ const app = new Vue(
                 },
             ],
             currentUser: 0,
+            userMessage: '',
         },
         methods: {
             checkCurrentUser: function (index) {
                 this.currentUser = index;
-            }
+            },
+            addMessage: function () {
+                const newObject = {
+                    date: Date.now(),
+                    message: this.userMessage,
+                    status: 'sent',
+                }
+                this.contacts[this.currentUser].messages.push(newObject);
+                this.userMessage = '';
+            },
+            answerMessage: function () {
+                setTimeout(() => {
+                    const newObject = {
+                        date: Date.now(),
+                        message: 'Va bene! OK! Ho capito!!',
+                        status: 'received'
+                    }
+                    this.contacts[this.currentUser].messages.push(newObject);
+                }, 1000);
+            },
         },
     },
 );

@@ -184,10 +184,6 @@ div.chats {
     align-self: flex-end;
 }
 
-.chat-p2p .first-sent {
-    margin-top: 3rem;
-}
-
 .chat-p2p .date-hour-sent-message {
     font-size: .7rem;
     color: #bdc1c7;

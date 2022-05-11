@@ -177,7 +177,7 @@ const app = new Vue(
                 const trimmedString = this.userMessage.trim();
                 if (trimmedString.length > 2) {
                     const newObject = {
-                        date: Date.now(),
+                        date: dayjs().format('HH:mm'),
                         message: trimmedString,
                         status: 'sent',
                     }
@@ -188,7 +188,7 @@ const app = new Vue(
             answerMessage: function () {
                 setTimeout(() => {
                     const newObject = {
-                        date: Date.now(),
+                        date: dayjs().format('HH:mm'),
                         message: 'Va bene! OK! Ho capito!!',
                         status: 'received'
                     }

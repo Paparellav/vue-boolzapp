@@ -114,13 +114,13 @@
                 <div class="chat-p2p">
                     <div 
                     :class="item.status === 'sent' ? 'sent-mess' : 'received-mess'" 
-                    v-for="item in contacts[currentUser].messages"
+                    v-for="(item, index) in contacts[currentUser].messages"
                     >
                         <p>{{ item.message }}</p>
-                        <i class="fas fa-chevron-down">
-                        </i>
+                        <i @click="deleteMessage(index)"class="fas fa-chevron-down"></i>
                         <div class="date-hour-sent-message">{{ item.date }}</div>
                     </div>
+
                 </div>
                 <!-- /Chat P2P section -->
                 <!-- Input section -->
@@ -132,8 +132,7 @@
                     type="text" 
                     placeholder="Scrivi messaggio" 
                     v-model="userMessage"
-                    @keyup.enter="answerMessage"
-                    @keydown.enter="addMessage"
+                    @keyup.enter="addMessage"
                     >
                     <div class="chat-input-icon">
                         <i class="fas fa-microphone"></i>

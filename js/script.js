@@ -183,17 +183,16 @@ const app = new Vue(
                     }
                     this.contacts[this.currentUser].messages.push(newObject);
                     this.userMessage = '';
+                    setTimeout(this.answerMessage, 1000)
                 }
             },
             answerMessage: function () {
-                setTimeout(() => {
-                    const newObject = {
-                        date: dayjs().format('HH:mm'),
-                        message: 'Va bene! OK! Ho capito!!',
-                        status: 'received'
-                    }
-                    this.contacts[this.currentUser].messages.push(newObject);
-                }, 1000);
+                const newObject = {
+                    date: dayjs().format('HH:mm'),
+                    message: 'Va bene! OK! Ho capito!!',
+                    status: 'received'
+                }
+                this.contacts[this.currentUser].messages.push(newObject);
             },
             filterContacts: function () {
                 this.contacts.forEach((e) => {
@@ -205,6 +204,12 @@ const app = new Vue(
                         e.visible = false;
                     }
                 });
+            },
+            deleteMessage: function (index) {
+                const itemOfArrayMessages = this.contacts[this.currentUser].messages;
+                const messageOfItemMessages = itemOfArrayMessages[index].message;
+                console.log(messageOfItemMessages);
+                this.contacts[this.currentUser].messages.splice(index, 1);
             },
 
         },

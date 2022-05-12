@@ -83,10 +83,10 @@
                             <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="contacts[currentUser].name">
                             <div class="user-data">
                                 <h5>{{ element.name }}</h5>
-                                <div class="message-sent">{{ element.messages[element.messages.length - 1].message }}</div>
+                                <div class="message-sent" v-if="element.messages.length > 0">{{ element.messages[element.messages.length - 1].message }}</div>
                             </div>
                         </div>
-                        <div class="date-hour-sent-message">{{ element.messages[element.messages.length - 1].date }}</div>
+                        <div class="date-hour-sent-message" v-if="element.messages.length > 0">{{ element.messages[element.messages.length - 1].date }}</div>
                     </div>
                     <!-- /Chat card -->
                 </div>
@@ -100,7 +100,7 @@
                         <img :src="'img/avatar' + contacts[currentUser].avatar + '.jpg'" :alt="contacts[currentUser].name">
                         <div>
                             <h5>{{ contacts[currentUser].name }}</h5>
-                            <div class="message-sent">Ultimo accesso {{ contacts[currentUser].messages[contacts[currentUser].messages.length - 1].date }}</div>
+                            <div class="message-sent" v-if="contacts[currentUser].messages.length > 0">Ultimo accesso {{ contacts[currentUser].messages[contacts[currentUser].messages.length - 1].date }}</div>
                         </div>    
                     </div>
                     <div class="icons-user">
@@ -111,7 +111,7 @@
                 </div>
                 <!-- /User section -->
                 <!-- Chat P2P section -->
-                <div class="chat-p2p" v-if="contacts[currentUser].messages.length > 0">
+                <div class="chat-p2p">
                     <div 
                     :class="item.status === 'sent' ? 'sent-mess' : 'received-mess'" 
                     v-for="(item, index) in contacts[currentUser].messages"

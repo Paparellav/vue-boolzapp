@@ -111,15 +111,21 @@
                 </div>
                 <!-- /User section -->
                 <!-- Chat P2P section -->
-                <div class="chat-p2p">
+                <div class="chat-p2p" v-if="contacts[currentUser].messages.length > 0">
                     <div 
                     :class="item.status === 'sent' ? 'sent-mess' : 'received-mess'" 
                     v-for="(item, index) in contacts[currentUser].messages"
                     >
                         <p>{{ item.message }}</p>
-                        <i @click="deleteMessage(index)"class="fas fa-chevron-down"></i>
+                        <i class="fas fa-chevron-down">
+                            <div class="menu">
+                                <p>Message info</p>
+                                <p @click="deleteMessage(index)">Delete message</p>
+                            </div>
+                        </i>
                         <div class="date-hour-sent-message">{{ item.date }}</div>
                     </div>
+
 
                 </div>
                 <!-- /Chat P2P section -->

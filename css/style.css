@@ -132,6 +132,10 @@ div.chats {
     cursor: pointer;
 }
 
+.item-card-chat:hover {
+    background-color: #e9ebeb;
+}
+
 .user-chat-image {
     display: flex;
     align-items: center;
@@ -183,6 +187,7 @@ div.chats {
 
 .chat-p2p .sent-mess {
     width: 300px;
+    max-height: 60px;
     font-size: .8rem;
     padding: .5rem 1rem;
     margin: .3rem 1rem;
@@ -199,6 +204,7 @@ div.chats {
 
 .chat-p2p .received-mess {
     width: 300px;
+    max-height: 60px;
     font-size: .8rem;
     padding: .5rem 1rem;
     margin: .3rem 1rem;
@@ -224,5 +230,27 @@ div.chats {
     border: none;
     border-radius: .5rem;
     padding: .7rem 1rem;
+}
 
+.menu {
+    width: 100px;
+    height: 100px;
+    line-height: 40px;
+    padding-left: .2rem;
+    font-size: .7rem;
+    position: relative;
+    left: 0;
+    bottom: 40px;
+    box-shadow: 1px 1px;
+    display: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.menu p:hover {
+    background-color: #dadada;
+}
+
+.chat-p2p i:hover .menu {
+    display: block;
 }

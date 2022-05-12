@@ -210,6 +210,7 @@ const app = new Vue(
                 const messageOfItemMessages = itemOfArrayMessages[index].message;
                 console.log(messageOfItemMessages);
                 this.contacts[this.currentUser].messages.splice(index, 1);
+                console.log(itemOfArrayMessages);
             },
 
         },
